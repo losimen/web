@@ -32,37 +32,35 @@
     <h3>Courses & Workshops</h3>
     <article class='course'>
       <div class='title'>
-        <h4>Udacity: Intro to HTML and CSS</h4>
+        <h4>BEST Hackathon 2021</h4>
       </div>
       <div class="descrition">
-        <p>Build styled, well-structured websites. Learn how to use HTML5 standard to create websites. Understand CSS
-          syntax, selectors, and units. Learn about code editors and a browser's Developer Tools.</p>
+        <p>Develop interactive game for QUIZEs.</p>
       </div>
     </article>
     <article class='course'>
       <div class='title'>
-        <h4>Udemy: The Web Developer Bootcamp</h4>
+        <h4>SoftServe IT Academy</h4>
       </div>
       <div class="descrition">
-        <p>Learn how to create full-stack web applications from scratch using HTML, CSS, JavaScript, jQuery, VanillaJS,
-          NodeJS, MongoDB.</p>
+        <p>Developed HTTP Chat using QT and cpprestSDK </p>
       </div>
     </article>
     <article class='course'>
       <div class='title'>
-        <h4>EdX: Web Programming with JavaScript</h4>
+        <h4>GlobalLogic IT Academy</h4>
       </div>
       <div class="descrition">
-        <p>Learn how to create web apps and prototypes with JavaScript, represent and exchange data using JavaScript
-          Object Notation (JSON), and how to access RESTful APIs on the web.</p>
+        <p>Developed virus, which you can control from your computer and remotely kill processes on the victim PC</p>
+        <p>Developed HTTP Messenger with openssl encryption (RSA+Sha256)</p>
       </div>
     </article>
     <article class='course'>
       <div class='title'>
-        <h4>Django Girls: 2-Day Workshops</h4>
+        <h4>Incora hackthon</h4>
       </div>
       <div class="descrition">
-        <p>Learn back-end development with simple blog application using Django framework.</p>
+        <p>Developed mobile program to create events and manage them</p>
       </div>
     </article>
   </section>
