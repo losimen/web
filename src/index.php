@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CV - Koval</title>
-  <meta name="description" content="simple CV example created with HTML and CSS">
+  <meta name="description" content="CV">
   <meta name="author" content="Fly Nerd">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
