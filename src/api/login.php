@@ -27,7 +27,7 @@ try {
     $row = pg_fetch_assoc($result);
 
     // Verify the password
-    if (password_verify($password, $row['password'])) {
+    if ($password == $row['password']) {
       echo "Login successful"; // Password is correct
     } else {
       throw new Exception("Wrong password"); // Password is incorrect
@@ -36,6 +36,7 @@ try {
     throw new Exception("User not found"); // User with provided email doesn't exist
   }
 } catch (Exception $err) {
+  http_response_code(401);
   echo "Error: " . $err->getMessage();
 }
 ?>

@@ -7,7 +7,7 @@ $password = "postgres";
 
 $db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-$email =  $_GET['email'];
+$email = $_GET['email'];
 $password = $_GET['password'];
 
 try {
@@ -15,20 +15,25 @@ try {
     throw new Exception("Failed to connect to database");
   }
 
-  $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+  // Check if the provided email already exists in the database
+  $checkExistingUserQuery = "SELECT * FROM users WHERE email = '$email'";
+  $existingUserResult = pg_query($db, $checkExistingUserQuery);
 
-  $result = @pg_query($db, $sql);
-
-  if ($result === false) {
-    if (strpos(pg_last_error($db), 'duplicate key value violates unique constraint') !== false) {
-      throw new Exception("User already exists");
-    } else {
-      throw new Exception("Error executing query: " . pg_last_error($db));
-    }
+  if (pg_num_rows($existingUserResult) > 0) {
+    throw new Exception("Email already exists"); // Email is already registered
   }
 
-  echo "success";
+  // Insert the new user into the database
+  $insertUserQuery = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+  $insertResult = pg_query($db, $insertUserQuery);
+
+  if ($insertResult) {
+    echo "Signup successful"; // User successfully signed up
+  } else {
+    throw new Exception("Failed to insert user"); // Failed to insert user into the database
+  }
 } catch (Exception $err) {
-  echo "wrong password or email";
+  http_response_code(401);
+  echo "Error: " . $err->getMessage();
 }
 ?>

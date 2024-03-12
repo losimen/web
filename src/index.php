@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<div id="log-error"></div>
 <div id="login-container"></div>
 <header>
   <div>
