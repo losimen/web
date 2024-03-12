@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<div id="login-container"></div>
 <header>
   <div>
     <img src="./img/avatar.jpg"/>
