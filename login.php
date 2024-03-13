@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $host = "dbnet";
 $port = "5432";
 $dbname = "cv_db";
@@ -7,8 +9,8 @@ $password = "postgres";
 
 $db = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-$email = $_GET['email'];
-$password = $_GET['password'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 try {
   if (!$db) {
@@ -28,7 +30,9 @@ try {
 
     // Verify the password
     if ($password == $row['password']) {
-      echo "Login successful"; // Password is correct
+      $_SESSION['user_email_address'] = $email;
+      $_SESSION['access_token'] = $password;
+      header('location:index.php');
     } else {
       throw new Exception("Wrong password"); // Password is incorrect
     }
@@ -39,4 +43,5 @@ try {
   http_response_code(401);
   echo "Error: " . $err->getMessage();
 }
+
 ?>
