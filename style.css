@@ -25,7 +25,7 @@ body {
   height: 5rem;
   width:10rem;
   background-color:red;
-  filter: blur(5px);  
+  filter: blur(5px);
 }
 
 a {
@@ -53,7 +53,7 @@ header, main, footer {
 header {
   padding: 2em;
   text-align: center;
-  background-image: url('./img/bg.jpg');
+  background-image: url('imgg.jpg');
   background-size: cover;
   background-position: fixed;
   color: white;
